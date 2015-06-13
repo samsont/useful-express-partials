@@ -11,10 +11,6 @@ doctype html
 html
   head
     meta(charset='utf-8')
-    meta(http-equiv='X-UA-Compatible', content='IE=edge')
-    meta(name='viewport', content='width=device-width, initial-scale=1.0')
-    meta(name='csrf-token', content=_csrf)
-    meta(name='commit', content='#{commit}')
     title #{title}
     include ../node_modules/useful-express-partials/partials/raygun-crash-reporter
     include ../node_modules/useful-express-partials/partials/heap-analytics
@@ -23,6 +19,16 @@ html
     .container
       block content
 ```
+
+## included partials
+
+### raygun-crash-reporter
+
+Flexible client-side crash reporting, including commit and version tags.
+
+### heap-analytics
+
+If the API key exists, includes the library code, plus tries to identify the user with email / name.
 
 ## Small print
 
