@@ -1,0 +1,37 @@
+if raygunApiKey
+  script(src='//cdn.raygun.io/raygun4js/raygun.min.js')
+  script.
+    (function initErrorReporting() {
+      var apiKey = '#{raygunApiKey}';
+      if (apiKey) {
+        var reportingOptions = {
+          allowInsecureSubmissions: true,
+          ignoreAjaxAbort: true,
+          ignoreAjaxError: true,
+          debugMode: true,
+          ignore3rdPartyErrors: false,
+          wrapAsynchronousCallbacks: true,
+          // add 'localhost' to ignore local dev errors
+          excludedHostnames: ['localhost', '\.dev'],
+          excludedUserAgents: ['PhantomJS']
+        }
+        Raygun.init(apiKey, reportingOptions)
+          .attach()
+          .withCustomData({ commit: '#{commit}' });
+        if ('#{raygunVersion}') {
+          Raygun.setVersion('#{raygunVersion}');
+        }
+      }
+    }());
+    (function crashIfNeeded() {
+      function shouldCrash() {
+        return window.location.href.indexOf('crash') !== -1;
+      }
+      if (shouldCrash()) {
+        setTimeout(function () {
+          throw new Error('This is a client-side crash on purpose');
+        }, 500);
+      }
+    }());
+else
+  <!-- skip raygun crash reporter -->

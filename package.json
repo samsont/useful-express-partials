@@ -1,0 +1,31 @@
+{
+  "name": "useful-express-partials",
+  "version": "0.1.0",
+  "description": "A collection of useful Jade view partials for ExpressJS server: error reporting, analytics, etc.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bahmutov/useful-express-partials.git"
+  },
+  "keywords": [
+    "express",
+    "expressjs",
+    "server",
+    "render",
+    "jade",
+    "partial",
+    "view",
+    "partials",
+    "collection",
+    "utility"
+  ],
+  "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bahmutov/useful-express-partials/issues"
+  },
+  "homepage": "https://github.com/bahmutov/useful-express-partials"
+}
