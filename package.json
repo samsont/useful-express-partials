@@ -26,5 +26,9 @@
   "bugs": {
     "url": "https://github.com/bahmutov/useful-express-partials/issues"
   },
-  "homepage": "https://github.com/bahmutov/useful-express-partials"
+  "homepage": "https://github.com/bahmutov/useful-express-partials",
+  "devDependencies": {
+    "pre-git": "0.5.0"
+  },
+  "post-commit": "npm version"
 }
