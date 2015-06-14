@@ -12,7 +12,7 @@ if raygunApiKey
           ignore3rdPartyErrors: false,
           wrapAsynchronousCallbacks: true,
           // add 'localhost' to ignore local dev errors
-          excludedHostnames: ['localhost', '\.dev'],
+          excludedHostnames: ['localhost', '127.0.0.1', '\.dev'],
           excludedUserAgents: ['PhantomJS']
         }
         Raygun.init(apiKey, reportingOptions)

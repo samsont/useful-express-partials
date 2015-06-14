@@ -22,6 +22,10 @@ html
 
 ## included partials
 
+Look through the partials to see the expected variables that need to be injected
+when rendering the view. I suggest using [render-vars](https://github.com/bahmutov/render-vars)
+to make sure each rendered views gets some common variables.
+
 ### raygun-crash-reporter
 
 Flexible client-side crash reporting, including commit and version tags.
