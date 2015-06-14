@@ -4,7 +4,7 @@
   "description": "A collection of useful Jade view partials for ExpressJS server: error reporting, analytics, etc.",
   "scripts": {
     "test-with-package": "with-package echo pkg.name version pkg.version description pkg.description",
-    "release": "with-package git commit -am pkg.version && git tag pkg.version"
+    "release": "with-package git commit -am pkg.version && with-package git tag pkg.version"
   },
   "repository": {
     "type": "git",
