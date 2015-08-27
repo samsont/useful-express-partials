@@ -28,6 +28,10 @@ if raygunApiKey
         if ('#{raygunVersion}') {
           Raygun.setVersion('#{raygunVersion}');
         }
+
+        if ('#{user.email}') {
+          Raygun.setUser('#{user.email}');
+        }
       }
     }());
     (function crashIfNeeded() {
