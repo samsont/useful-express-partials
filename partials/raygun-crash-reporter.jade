@@ -3,6 +3,10 @@ if raygunApiKey
   script.
     (function initErrorReporting() {
       var apiKey = '#{raygunApiKey}';
+      // list of domains to skip reporting errors for
+      // typically ['localhost', '127.0.0.1']
+      var excludedHostnames = #{raygunExcludedHostnames};
+
       if (apiKey) {
         var reportingOptions = {
           allowInsecureSubmissions: true,
@@ -12,7 +16,7 @@ if raygunApiKey
           ignore3rdPartyErrors: false,
           wrapAsynchronousCallbacks: true,
           // add 'localhost' to ignore local dev errors
-          excludedHostnames: ['localhost', '127.0.0.1', '\.dev'],
+          excludedHostnames: excludedHostnames,
           excludedUserAgents: ['PhantomJS']
         }
         Raygun.init(apiKey, reportingOptions)
