@@ -5,7 +5,10 @@ if raygunApiKey
       var apiKey = '#{raygunApiKey}';
       // list of domains to skip reporting errors for
       // typically ['localhost', '127.0.0.1']
-      var excludedHostnames = #{raygunExcludedHostnames};
+      // in your Jade code stringify the array to render it, for example
+      // data:
+      //   raygunExcludedHostnames: JSON.stringify(['localhost', '127.0.0.1'])
+      var excludedHostnames = !{raygunExcludedHostnames};
 
       if (apiKey) {
         var reportingOptions = {
